@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-config
+data:
+  application.yaml: |
+{{ .Values.appConfig | toYaml | indent 2 }}
