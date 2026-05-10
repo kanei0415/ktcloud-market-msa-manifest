@@ -23,7 +23,7 @@ spec:
             - name: http
               containerPort: {{ .Values.appConfig.server.port | default 8080 }}
               protocol: TCP
-            {{- if .Values.appConfig.grpc.server }}
+            {{- if and .Values.appConfig.grpc .Values.appConfig.grpc.server }}
             - name: grpc
               containerPort: {{ .Values.appConfig.grpc.server.port | default 9090 }}
               protocol: TCP
