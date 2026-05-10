@@ -29,7 +29,7 @@ spec:
               protocol: TCP
             {{- end }}
 
-          {{- if .Values.appConfig.jwt.secret }}
+          {{- if .Values.appConfig.jwt }}
           env:
             - name: JWT_SECRET_ENV
               valueFrom:
