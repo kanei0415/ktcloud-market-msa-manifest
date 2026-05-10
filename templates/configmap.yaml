@@ -5,4 +5,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   application.yaml: |
-{{ .Values.appConfig | toYaml | indent 4 }}
+{{- .Values.appConfig | toYaml | nindent 4 }}
