@@ -30,15 +30,6 @@ spec:
               protocol: TCP
             {{- end }}
 
-          {{- if .Values.appConfig.jwt }}
-          env:
-            - name: JWT_SECRET_ENV
-              valueFrom:
-                secretKeyRef:
-                  name: msa-jwt-secret
-                  key: JWT_SECRET
-          {{- end }}
-
           args:
             - "--spring.config.location=optional:classpath:/,optional:file:/config/application.yaml"
 
